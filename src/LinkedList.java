@@ -1,11 +1,12 @@
 public class LinkedList {
-    Node head;
-    Node tail;
+    Node head = null;
+    Node tail = null;
     Node dataNode;
 
 
     /**
      * Add data into a LinkedList
+     *
      * @param data The key value of a New Node
      */
     public void add(int data) {
@@ -24,15 +25,15 @@ public class LinkedList {
     /**
      * To display all the data from nodes in a LinkedList
      */
-    public void displayNode(){
+    public void displayNode() {
         Node currentNode = head;
-        if(head==null){
+        if (head == null) {
             System.out.println("Empty Linklist");
-        }else{
+        } else {
             System.out.println("Nodes of Linklist: ");
-            while(currentNode!=null){
-                System.out.print(currentNode.data+" ");
-                currentNode=currentNode.next;
+            while (currentNode != null) {
+                System.out.print(currentNode.data + " ");
+                currentNode = currentNode.next;
             }
             System.out.println();
 
@@ -41,6 +42,7 @@ public class LinkedList {
 
     /**
      * To add node to the front of a previous node
+     *
      * @param data The key value of a Node
      */
     public void addDataToFront(int data) {
@@ -52,7 +54,7 @@ public class LinkedList {
         } else {
 
             newNode.next = head;
-            head=newNode;
+            head = newNode;
         }
 
     }
@@ -60,6 +62,7 @@ public class LinkedList {
     /**
      * UC-3 : Add 30 and 70 to 56
      * Method append() Add data node to back of a previous node
+     *
      * @param data The key value of a Node
      * @return
      */
@@ -81,30 +84,56 @@ public class LinkedList {
 
     /**
      * UC-4 To add a new node after a given previous node
+     *
      * @param previousNode The node which comes before the new node to be added
-     * @param data New node key value
+     * @param data         New node key value
      */
-    public void insertAfter(Node previousNode, int data){
-        Node newNode=new Node(data);
+    public void insertAfter(Node previousNode, int data) {
+        Node newNode = new Node(data);
 
-        if(head==null){
+        if (head == null) {
             System.out.println("EMPTY LINKEDLIST");
+        } else {
+            newNode.next = previousNode.next;
+            previousNode.next = newNode;
         }
-        else{
-            newNode.next=previousNode.next;
-            previousNode.next=newNode;
-        }
-}
+    }
+
+    /**
+     * UC-5 To pop head of a Linked List
+     */
 
     public void popHead() {
         if (head == null) {
             System.out.println("EMPTY LINKEDLIST");
         } else {
-            head=head.next;
+            head = head.next;
         }
     }
 
+    /**
+     * UC-6 To pop last node i.e Tail of a LinkedList
+     */
+    public void popTail() {
+        if (head == null) {
+            System.out.println("EMPTY LINKEDLIST");
+        } else {
+            if (head != tail) {
+                Node current = head;
+                while (current.next != tail) {
+                    current = current.next;
+                }
+                tail = current;
+                tail.next = null;
+
+
+            }
+        }
+    }
 }
+
+
+
 
 
 
