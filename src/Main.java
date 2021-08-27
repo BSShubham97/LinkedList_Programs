@@ -5,9 +5,10 @@ public class Main {
         LinkedList linkedList=new LinkedList();
 
         linkedList.add(56);
+        linkedList.add(30);
         linkedList.add(70);
-        linkedList.insertAfter(linkedList.head, 30);
-
+        linkedList.displayNode();
+        linkedList.popHead();
         linkedList.displayNode();
 
     }

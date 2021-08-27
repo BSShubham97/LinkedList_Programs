@@ -96,6 +96,14 @@ public class LinkedList {
         }
 }
 
+    public void popHead() {
+        if (head == null) {
+            System.out.println("EMPTY LINKEDLIST");
+        } else {
+            head=head.next;
+        }
+    }
+
 }
 
 
