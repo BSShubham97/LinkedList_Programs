@@ -125,12 +125,42 @@ public class LinkedList {
                 }
                 tail = current;
                 tail.next = null;
-
-
             }
         }
     }
+    /**
+     * UC-7 To search the node position of the entered data
+     * @param searchedData The value to be through the linkedlist to get its node position
+     */
+    public void dataPosition(int searchedData){
+        System.out.println("Data to be Searched : "+searchedData);
+        int i = 1;
+        boolean found=false;
+        Node current=head;
+        if(head==null){
+            System.out.println("Linked List is Empty");
+        }else {
+            while (current != null) {
+                if (current.data == searchedData) {
+                    found = true;
+                    break;
+                }
+                i++;
+                current = current.next;
+            }
+        }
+        if(found==true)
+            System.out.println("Found data at Node Position : "+i);
+        else
+            System.out.println("Not Found");
+        }
+
+
+
 }
+
+
+
 
 
 

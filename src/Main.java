@@ -8,8 +8,8 @@ public class Main {
         linkedList.add(30);
         linkedList.add(70);
         linkedList.displayNode();
-        linkedList.popTail();
-        linkedList.displayNode();
+
+        linkedList.dataPosition(30);
 
 
     }
