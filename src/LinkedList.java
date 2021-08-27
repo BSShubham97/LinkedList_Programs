@@ -79,6 +79,22 @@ public class LinkedList {
 
     }
 
+    /**
+     * UC-4 To add a new node after a given previous node
+     * @param previousNode The node which comes before the new node to be added
+     * @param data New node key value
+     */
+    public void insertAfter(Node previousNode, int data){
+        Node newNode=new Node(data);
+
+        if(head==null){
+            System.out.println("EMPTY LINKEDLIST");
+        }
+        else{
+            newNode.next=previousNode.next;
+            previousNode.next=newNode;
+        }
+}
 
 }
 
