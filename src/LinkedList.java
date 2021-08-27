@@ -155,6 +155,37 @@ public class LinkedList {
             System.out.println("Not Found");
         }
 
+    /**
+     * UC-8 To add data at a given postion of Node
+     * @param prevPositionOfInsertion The postion of at which you want to add data
+     * @param dataToBeEntered The key value to be added
+     */
+    public void enterDataAtPositon(int prevPositionOfInsertion , int dataToBeEntered ){
+        Node newDataNode = new Node(dataToBeEntered);
+
+        boolean found=false;
+        Node current=head;
+
+        if(head==null){
+            System.out.println("Linked List is Empty");
+        }else {
+            while (current != null) {
+                if (current.data == prevPositionOfInsertion) {
+                    found = true;
+
+                    newDataNode.next = current.next;    //
+                    current.next = newDataNode;
+
+                    break;
+                }
+                current = current.next;
+            }
+        }
+        if(found==true)
+            System.out.println("Data Inserted");
+        else
+            System.out.println("Postion not found");
+    }
 
 
 }

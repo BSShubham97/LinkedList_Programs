@@ -9,8 +9,8 @@ public class Main {
         linkedList.add(70);
         linkedList.displayNode();
 
-        linkedList.dataPosition(30);
-
+        linkedList.enterDataAtPositon(30,40);
+        linkedList.displayNode();
 
     }
 
