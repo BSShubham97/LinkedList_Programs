@@ -6,11 +6,14 @@ public class Main {
 
         linkedList.add(56);
         linkedList.add(30);
+        linkedList.add(40);
         linkedList.add(70);
         linkedList.displayNode();
+        linkedList.size();
 
-        linkedList.enterDataAtPositon(30,40);
+        linkedList.deleteThisData(40);
         linkedList.displayNode();
+        linkedList.size();
 
     }
 

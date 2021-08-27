@@ -173,7 +173,7 @@ public class LinkedList {
                 if (current.data == prevPositionOfInsertion) {
                     found = true;
 
-                    newDataNode.next = current.next;    //
+                    newDataNode.next = current.next;
                     current.next = newDataNode;
 
                     break;
@@ -187,8 +187,54 @@ public class LinkedList {
             System.out.println("Postion not found");
     }
 
+    /**
+     * UC-9 To delete the entered data from the LinkedList and give out the size
+     * @param thisDataToBeDeleted The data of node to be deleted
+     */
+    public void deleteThisData(int thisDataToBeDeleted) {
+        Node current = head;
+        Node previous = null;
+
+
+        if (current.next != null && current.data == thisDataToBeDeleted) {
+            head = current.next;
+            return;
+        }
+
+        while (current.next != null && current.data != thisDataToBeDeleted) {
+
+            previous = current;
+            current = current.next;
+
+        }
+        if (current == null)
+            System.out.println("Data not present");
+
+        previous.next = current.next;
+
+    }
+
+
+    public void size(){
+        Node current=head;
+        int i=0;
+        if(head==null){
+            System.out.println("Empty LinkedList");
+        }else{
+            while( current!=null){
+                current=current.next;
+                i++;
+            }
+
+        }
+        System.out.println("Size of LinkedList  is: "+i);
+    }
+
+
 
 }
+
+
 
 
 
