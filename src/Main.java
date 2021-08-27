@@ -4,9 +4,9 @@ public class Main {
 
         LinkedList linkedList=new LinkedList();
 
-        linkedList.add(56);
-        linkedList.add(30);
-        linkedList.add(70);
+        linkedList.addDataToFront(70);
+        linkedList.addDataToFront(30);
+        linkedList.addDataToFront(56);
 
         linkedList.displayNode();
 

@@ -3,6 +3,11 @@ public class LinkedList {
     Node tail;
     Node dataNode;
 
+
+    /**
+     * Add data into a LinkedList
+     * @param data The key value of a New Node
+     */
     public void add(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -17,7 +22,7 @@ public class LinkedList {
 
 
     /**
-     *
+     * To display all the data from nodes in a LinkedList
      */
     public void displayNode(){
         Node currentNode = head;
@@ -33,6 +38,26 @@ public class LinkedList {
 
         }
     }
+
+    /**
+     * To add node to the front of a previous node
+     * @param data The key value of a Node
+     */
+    public void addDataToFront(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            this.head = newNode;
+            this.tail = newNode;
+            this.dataNode = newNode;
+        } else {
+
+            newNode.next = head;
+            head=newNode;
+        }
+
+    }
+
+
 
 }
 
