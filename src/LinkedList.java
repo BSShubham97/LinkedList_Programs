@@ -57,8 +57,31 @@ public class LinkedList {
 
     }
 
+    /**
+     * UC-3 : Add 30 and 70 to 56
+     * Method append() Add data node to back of a previous node
+     * @param data The key value of a Node
+     * @return
+     */
+    public void append(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            this.head = newNode;
+            this.tail = newNode;
+            this.dataNode = newNode;
+        } else {
+            Node tempNode = head;
+            while (tempNode.next != null) {
+                tempNode = tempNode.next;
+            }
+            tempNode.next = newNode;
+        }
+
+    }
 
 
 }
+
+
 
 
