@@ -128,18 +128,20 @@ public class LinkedList {
             }
         }
     }
+
     /**
      * UC-7 To search the node position of the entered data
+     *
      * @param searchedData The value to be through the linkedlist to get its node position
      */
-    public void dataPosition(int searchedData){
-        System.out.println("Data to be Searched : "+searchedData);
+    public void dataPosition(int searchedData) {
+        System.out.println("Data to be Searched : " + searchedData);
         int i = 1;
-        boolean found=false;
-        Node current=head;
-        if(head==null){
+        boolean found = false;
+        Node current = head;
+        if (head == null) {
             System.out.println("Linked List is Empty");
-        }else {
+        } else {
             while (current != null) {
                 if (current.data == searchedData) {
                     found = true;
@@ -149,26 +151,27 @@ public class LinkedList {
                 current = current.next;
             }
         }
-        if(found==true)
-            System.out.println("Found data at Node Position : "+i);
+        if (found == true)
+            System.out.println("Found data at Node Position : " + i);
         else
             System.out.println("Not Found");
-        }
+    }
 
     /**
-     * UC-8 To add data at a given postion of Node
+     * UC-8 To add data at a given position of Node
+     *
      * @param prevPositionOfInsertion The postion of at which you want to add data
-     * @param dataToBeEntered The key value to be added
+     * @param dataToBeEntered         The key value to be added
      */
-    public void enterDataAtPositon(int prevPositionOfInsertion , int dataToBeEntered ){
+    public void enterDataAtPositon(int prevPositionOfInsertion, int dataToBeEntered) {
         Node newDataNode = new Node(dataToBeEntered);
 
-        boolean found=false;
-        Node current=head;
+        boolean found = false;
+        Node current = head;
 
-        if(head==null){
+        if (head == null) {
             System.out.println("Linked List is Empty");
-        }else {
+        } else {
             while (current != null) {
                 if (current.data == prevPositionOfInsertion) {
                     found = true;
@@ -181,7 +184,7 @@ public class LinkedList {
                 current = current.next;
             }
         }
-        if(found==true)
+        if (found == true)
             System.out.println("Data Inserted");
         else
             System.out.println("Postion not found");
@@ -189,6 +192,7 @@ public class LinkedList {
 
     /**
      * UC-9 To delete the entered data from the LinkedList and give out the size
+     *
      * @param thisDataToBeDeleted The data of node to be deleted
      */
     public void deleteThisData(int thisDataToBeDeleted) {
@@ -214,25 +218,58 @@ public class LinkedList {
 
     }
 
-
-    public void size(){
-        Node current=head;
-        int i=0;
-        if(head==null){
+    /**
+     * To find the size of the LinkedList
+     */
+    public void size() {
+        Node current = head;
+        int i = 0;
+        if (head == null) {
             System.out.println("Empty LinkedList");
-        }else{
-            while( current!=null){
-                current=current.next;
+        } else {
+            while (current != null) {
+                current = current.next;
                 i++;
             }
 
         }
-        System.out.println("Size of LinkedList  is: "+i);
+        System.out.println("Size of LinkedList  is: " + i);
     }
 
 
+    /**
+     * sortList() will sort nodes of the list in ascending order
+     */
 
+    public void sortList() {
+
+        //Node current will point to head
+        Node current = head, index = null;
+        int temp;
+
+        if (head == null) {
+            return;
+        } else {
+            while (current != null) {
+                //Node index will point to node next to current
+                index = current.next;
+
+                while (index != null) {
+                    //If current node's data is greater than index's node data, swap the data between them 
+                    if (current.data > index.data) {
+                        temp = current.data;
+                        current.data = index.data;
+                        index.data = temp;
+                    }
+                    index = index.next;
+                }
+                current = current.next;
+            }
+        }
+        System.out.println("Sorted");
+    }
 }
+
 
 
 

@@ -9,11 +9,10 @@ public class Main {
         linkedList.add(40);
         linkedList.add(70);
         linkedList.displayNode();
-        linkedList.size();
 
-        linkedList.deleteThisData(40);
+
+        linkedList.sortList();
         linkedList.displayNode();
-        linkedList.size();
 
     }
 
